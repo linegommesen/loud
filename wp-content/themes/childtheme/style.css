@@ -1,0 +1,63 @@
+/*
+Theme Name: Childtheme
+Template: twentytwenty
+Description: Twenty twenty childtheme
+Version: 1.0.4
+Author: Line G
+*/
+
+p{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+h2{
+font-family: 'Roboto', sans-serif;
+font-weight: 400;
+font-size: 3rem;
+margin-top: 1rem;
+margin-bottom: 1rem;
+margin-right: 0rem;
+margin-left: 0rem;
+}
+.overskrift{
+    text-align: center;
+}
+.tekst{
+    text-align: center;
+}
+.filter{
+    border-radius: 7px;
+    background-color: #9AC1B5;
+    color: white;
+}
+.podcasts:hover{
+    transform: scale(1.1);
+}
+@media (min-width: 700px){
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+    max-width: 100%;
+    width: calc(100% - 4rem);
+}
+
+.container{
+ display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5rem;
+    padding-left: 12rem;
+    padding-right: 12rem;
+
+}
+.episode_enkelt{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 1;
+
+    }
+#episoder{
+        display: grid;
+        grid-template-columns: 1;
+        grid-template-rows: auto;
+    }
+
+}
