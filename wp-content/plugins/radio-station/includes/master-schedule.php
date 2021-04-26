@@ -237,13 +237,13 @@ function radio_station_master_schedule( $atts ) {
 	// --- check to see what day of the week we need to start on ---
 	$start_of_week = get_option( 'start_of_week' );
 	$days_of_the_week = array(
-		'Sunday'    => array(),
-		'Monday'    => array(),
-		'Tuesday'   => array(),
-		'Wednesday' => array(),
-		'Thursday'  => array(),
-		'Friday'    => array(),
-		'Saturday'  => array(),
+		'Søndag'    => array(),
+		'Mandag'    => array(),
+		'Tirsdag'   => array(),
+		'Onsdag' => array(),
+		'Torsdag'  => array(),
+		'Fredag'    => array(),
+		'Lørdag'  => array(),
 	);
 	$week_start = array_slice( $days_of_the_week, $start_of_week );
 	foreach ( $days_of_the_week as $i => $weekday ) {
