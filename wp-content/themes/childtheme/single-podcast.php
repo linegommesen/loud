@@ -20,13 +20,13 @@ get_header();
     <main id="main" class="site-main">
 
         <img class="banner" src="" alt="">
-        <h1>EPISODER</h1>
+        <h1 class="overskrift_episoder">EPISODER</h1>
 
 
         <section id="episoder">
             <template>
                 <article class="episode_enkelt">
-                    <img class="billede" src="" alt="">
+                    <img class="billede episode_billede" src="" alt="">
                     <div>
                         <h2></h2>
                         <p class="beskrivelse_kort"></p>
