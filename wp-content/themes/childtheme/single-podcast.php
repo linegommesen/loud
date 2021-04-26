@@ -32,10 +32,10 @@ get_header();
                         <p class="beskrivelse_kort"></p>
                     </div>
              <div class="ikoner">
-                 <img class="spotify ikon" src="" alt="">
-                 <img class="podimo ikon" src="" alt="">
-                 <img class="apple ikon" src="" alt="">
-                 <img class="google ikon" src="" alt="">
+                 <a href="https://www.spotify.com/dk-en/premium/?utm_source=dk_brand_contextual_text&utm_medium=paidsearch&utm_campaign=alwayson_europe_dk_performancemarketing_core_brand+contextual+text+exact+dk+google&gclid=Cj0KCQjwyZmEBhCpARIsALIzmnIlcYTvefMRpHTJJHKfnUnuPUYdjezcmQCHD0tur4DaYhhjQFbBaV8aAtHDEALw_wcB&gclsrc=aw.ds"><img class="spotify ikon" src="" alt=""></a>
+                 <a href="https://podimo.com/dk/?utm_source=google&utm_medium=cpc_brand&utm_campaign=DK_PERFORMANCE_SEARCH_BRAND&utm_term=Podimo_exact-match&utm_content=BrandedSearches&gclid=Cj0KCQjwyZmEBhCpARIsALIzmnKY5SyzX3kmSmV-WLgnoOGY2cy-BUdxB_w6sS9GYEF6_G_qbQI78k8aAntxEALw_wcB"><img class="podimo ikon" src="" alt=""></a>
+                 <a href="https://www.apple.com/itunes/"><img class="apple ikon" src="" alt=""></a>
+                 <a href="href=https://podcasts.google.com/"><img class="google ikon" src="" alt=""></a>
 
              </div>
                 </article>
