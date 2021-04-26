@@ -1519,7 +1519,7 @@ function radio_station_localize_script() {
 	// 2.3.2: also translate short day labels
 	$js .= "radio.labels.days = new Array(";
 	$short = "radio.labels.sdays = new Array(";
-	$days = array( 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' );
+	$days = array( 'Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag' );
 	foreach ( $days as $i => $day ) {
 		$day = radio_station_translate_weekday( $day );
 		$short_day = radio_station_translate_weekday( $day, true );
