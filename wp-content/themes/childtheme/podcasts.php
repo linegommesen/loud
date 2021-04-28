@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 
+
 <template>
         <article class="podcasts">
             <img class="billede" src="" alt="">
@@ -16,7 +17,7 @@
         </article>
     </template>
 
- <h2 class="overskrift">NYESTE EPISODER</h2>
+ <h3 class="overskrift">NYESTE EPISODER</h3>
         <p class="tekst">Find de nyeste episoder af vores podcast her!</p>
     <section class="container">
 
@@ -25,7 +26,7 @@
 
         let podcasts;
 
-        const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=9";
+        const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
         async function getJson() {
             const data = await fetch(dbUrl);
@@ -37,7 +38,9 @@
         function visPodcasts() {
             let temp = document.querySelector("template");
             let container = document.querySelector(".container")
+
             podcasts.forEach(podcast => {
+                 if (podcast.nyeste >= true){
                 let klon = temp.cloneNode(true).content;
                 klon.querySelector("h2").textContent = podcast.title.rendered;
                 klon.querySelector(".billede").src = podcast.billede.guid;
@@ -45,7 +48,7 @@
 
                 klon.querySelector("article").addEventListener("click", ()=> {location.href = podcast.link;})
                 container.appendChild(klon);
-
+                 }
             })
         }
         getJson();

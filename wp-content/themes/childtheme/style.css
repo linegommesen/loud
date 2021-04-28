@@ -35,7 +35,16 @@ h1 {
 h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 0rem;
+    margin-left: 0rem;
+}
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 4rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-right: 0rem;
@@ -58,6 +67,7 @@ h2 {
 
 .podcasts:hover {
     transform: scale(1.1);
+    background-color: #F7F7F7;
 }
 
 .ikon {
@@ -72,6 +82,15 @@ h2 {
     justify-content: center;
     margin-top: 7.2rem;
 }
+.ss-nav-button{
+padding: 5px 18px !important;
+  color: #ffffff !important;
+  border-radius: 5px;
+  background-color: #cc0033;
+}
+#menu-item-725{
+    color: #ffffff;
+}
 
 @media (min-width: 700px) {
     .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
@@ -81,8 +100,8 @@ h2 {
 
     .container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 5rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 3rem;
         padding-left: 12rem;
         padding-right: 12rem;
         padding-top: 4rem;

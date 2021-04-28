@@ -29,6 +29,10 @@ get_header();
     </template>
 
  <main id="main" class="site-main">
+ <section class="container2">
+     <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcasts_banner.png" alt="">
+ </section>
+
    <nav id="filtrering"><button class="filter" data-podcast="alle">Alle</button></nav>
     <section class="container"></section>
 </main>
