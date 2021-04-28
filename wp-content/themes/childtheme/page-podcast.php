@@ -38,7 +38,12 @@ get_header();
             <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcasts_banner.png" alt="">
         </section>
 
-        <nav id="filtrering"><button class="filter" data-podcast="alle">Alle</button></nav>
+        <nav id="filtrering">
+            <div id="filterknap">☰</div>
+            <ul id="menu" class="hidden">
+                <button class="filter" data-podcast="alle">Alle</button>
+            </ul>
+        </nav>
         <section class="container"></section>
     </main>
     <script>

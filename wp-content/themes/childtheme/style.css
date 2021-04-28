@@ -169,3 +169,38 @@ h3 {
             grid-gap: 10px;
         }
     }
+
+    #menu-item-725 a {
+        color: white;
+    }
+
+    /* BURGERMENU */
+    .hidden {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    #filterknap {
+        display: inline-block;
+    }
+
+    #menu {
+        list-style-type: none;
+        transition: transform .3s;
+        transform-origin: top left;
+    }
+
+    @media only screen and (min-width: 600px) {
+        #filterknap {
+            display: none;
+        }
+
+        #menu.hidden {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        #menu li {
+            display: inline-block;
+        }
+    }
