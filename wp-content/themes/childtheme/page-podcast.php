@@ -32,69 +32,76 @@ get_header();
     <nav id="filtrering">
         <button class="filter" data-podcast="alle">Alle</button>
     </nav>
-    <section class="container"></section>
-</main>
-<script>
-    let podcasts;
-    let categories;
-    let filterPodcast = "alle";
 
-    const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
+    <main id="main" class="site-main">
+        <section class="container2">
+            <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcasts_banner.png" alt="">
+        </section>
 
-    const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
+        <nav id="filtrering"><button class="filter" data-podcast="alle">Alle</button></nav>
+        <section class="container"></section>
+    </main>
+    <script>
+        let podcasts;
+        let categories;
+        let filterPodcast = "alle";
 
-    async function getJson() {
-        const data = await fetch(dbUrl);
-        const catdata = await fetch(catUrl);
-        podcasts = await data.json();
-        categories = await catdata.json();
-        console.log(categories);
-        visPodcasts();
-        opretKnapper();
-    }
+        const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
-    function opretKnapper() {
-        categories.forEach(cat => {
-            document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
-        })
-        addEventListenersToButtons();
-    }
+        const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
 
-    function addEventListenersToButtons() {
-        document.querySelectorAll("#filtrering button").forEach(elm => {
-            elm.addEventListener("click", filtrering);
-        })
-    };
+        async function getJson() {
+            const data = await fetch(dbUrl);
+            const catdata = await fetch(catUrl);
+            podcasts = await data.json();
+            categories = await catdata.json();
+            console.log(categories);
+            visPodcasts();
+            opretKnapper();
+        }
 
-    function filtrering() {
-        filterPodcast = this.dataset.podcast;
-        console.log(filterPodcast);
-        visPodcasts();
-    }
+        function opretKnapper() {
+            categories.forEach(cat => {
+                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
+            })
+            addEventListenersToButtons();
+        }
 
-    function visPodcasts() {
-        let temp = document.querySelector("template");
-        let container = document.querySelector(".container")
-        container.innerHTML = "";
-        podcasts.forEach(podcast => {
-            if (filterPodcast == "alle" || podcast.categories.includes(parseInt(filterPodcast))) {
-                let klon = temp.cloneNode(true).content;
-                klon.querySelector("h2").innerHTML = podcast.title.rendered;
-                klon.querySelector(".billede").src = podcast.billede.guid;
-                klon.querySelector(".beskrivelse_kort").textContent = podcast.beskrivelse_kort;
+        function addEventListenersToButtons() {
+            document.querySelectorAll("#filtrering button").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        };
 
-                klon.querySelector("article").addEventListener("click", () => {
-                    location.href = podcast.link;
-                })
-                container.appendChild(klon);
-            }
-        })
-    }
-    getJson();
+        function filtrering() {
+            filterPodcast = this.dataset.podcast;
+            console.log(filterPodcast);
+            visPodcasts();
+        }
 
-</script>
+        function visPodcasts() {
+            let temp = document.querySelector("template");
+            let container = document.querySelector(".container")
+            container.innerHTML = "";
+            podcasts.forEach(podcast => {
+                if (filterPodcast == "alle" || podcast.categories.includes(parseInt(filterPodcast))) {
+                    let klon = temp.cloneNode(true).content;
+                    klon.querySelector("h2").innerHTML = podcast.title.rendered;
+                    klon.querySelector(".billede").src = podcast.billede.guid;
+                    klon.querySelector(".beskrivelse_kort").textContent = podcast.beskrivelse_kort;
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+                    klon.querySelector("article").addEventListener("click", () => {
+                        location.href = podcast.link;
+                    })
+                    container.appendChild(klon);
+                }
+            })
+        }
+        getJson();
 
-<?php
+    </script>
+
+    <?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+
+    <?php
 get_footer();
