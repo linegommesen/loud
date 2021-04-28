@@ -28,85 +28,101 @@ get_header();
     </article>
 </template>
 
+
 <main id="main" class="site-main">
+    <section class="container2">
+        <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcasts_banner.png" alt="">
+    </section>
+
     <nav id="filtrering">
-        <button class="filter" data-podcast="alle">Alle</button>
+        <div id="filterknap">☰</div>
+        <ul id="menu" class="hidden">
+            <button class="filter" data-podcast="alle">Alle</button>
+        </ul>
     </nav>
+    <section class="container"></section>
+</main>
+<script>
+    let podcasts;
+    let categories;
+    let filterPodcast = "alle";
 
-    <main id="main" class="site-main">
-        <section class="container2">
-            <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcasts_banner.png" alt="">
-        </section>
+    const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
-        <nav id="filtrering">
-            <div id="filterknap">☰</div>
-            <ul id="menu" class="hidden">
-                <button class="filter" data-podcast="alle">Alle</button>
-            </ul>
-        </nav>
-        <section class="container"></section>
-    </main>
-    <script>
-        let podcasts;
-        let categories;
-        let filterPodcast = "alle";
+    const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
 
-        const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
+    async function getJson() {
+        const data = await fetch(dbUrl);
+        const catdata = await fetch(catUrl);
+        podcasts = await data.json();
+        categories = await catdata.json();
+        console.log(categories);
+        visPodcasts();
+        opretKnapper();
+    }
 
-        const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
+    function opretKnapper() {
+        categories.forEach(cat => {
+            document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
+        })
+        addEventListenersToButtons();
+    }
 
-        async function getJson() {
-            const data = await fetch(dbUrl);
-            const catdata = await fetch(catUrl);
-            podcasts = await data.json();
-            categories = await catdata.json();
-            console.log(categories);
-            visPodcasts();
-            opretKnapper();
+    function addEventListenersToButtons() {
+        document.querySelectorAll("#filtrering button").forEach(elm => {
+            elm.addEventListener("click", filtrering);
+        })
+    };
+
+    function filtrering() {
+        filterPodcast = this.dataset.podcast;
+        console.log(filterPodcast);
+        visPodcasts();
+    }
+
+    function visPodcasts() {
+        let temp = document.querySelector("template");
+        let container = document.querySelector(".container")
+        container.innerHTML = "";
+        podcasts.forEach(podcast => {
+            if (filterPodcast == "alle" || podcast.categories.includes(parseInt(filterPodcast))) {
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h2").innerHTML = podcast.title.rendered;
+                klon.querySelector(".billede").src = podcast.billede.guid;
+                klon.querySelector(".beskrivelse_kort").textContent = podcast.beskrivelse_kort;
+
+                klon.querySelector("article").addEventListener("click", () => {
+                    location.href = podcast.link;
+                })
+                container.appendChild(klon);
+            }
+        })
+    }
+    getJson();
+
+    window.addEventListener("load", sidenVises);
+
+    function sidenVises() {
+        console.log("sidenVises");
+        document.querySelector("#filterknap").addEventListener("click", toggleMenu);
+    }
+
+    function toggleMenu() {
+        console.log("toggleMenu");
+        document.querySelector("#menu").classList.toggle("hidden");
+
+        let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+        if (erSkjult == true) {
+            document.querySelector("#filterknap").textContent = "☰";
+        } else {
+            document.querySelector("#filterknap").textContent = "X";
         }
+    }
 
-        function opretKnapper() {
-            categories.forEach(cat => {
-                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
-            })
-            addEventListenersToButtons();
-        }
+</script>
 
-        function addEventListenersToButtons() {
-            document.querySelectorAll("#filtrering button").forEach(elm => {
-                elm.addEventListener("click", filtrering);
-            })
-        };
+<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
-        function filtrering() {
-            filterPodcast = this.dataset.podcast;
-            console.log(filterPodcast);
-            visPodcasts();
-        }
-
-        function visPodcasts() {
-            let temp = document.querySelector("template");
-            let container = document.querySelector(".container")
-            container.innerHTML = "";
-            podcasts.forEach(podcast => {
-                if (filterPodcast == "alle" || podcast.categories.includes(parseInt(filterPodcast))) {
-                    let klon = temp.cloneNode(true).content;
-                    klon.querySelector("h2").innerHTML = podcast.title.rendered;
-                    klon.querySelector(".billede").src = podcast.billede.guid;
-                    klon.querySelector(".beskrivelse_kort").textContent = podcast.beskrivelse_kort;
-
-                    klon.querySelector("article").addEventListener("click", () => {
-                        location.href = podcast.link;
-                    })
-                    container.appendChild(klon);
-                }
-            })
-        }
-        getJson();
-
-    </script>
-
-    <?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
-
-    <?php
+<?php
 get_footer();
