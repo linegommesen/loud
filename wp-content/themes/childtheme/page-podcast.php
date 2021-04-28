@@ -38,7 +38,9 @@ get_header();
         <div id="filterknap">☰</div>
         <ul id="menu" class="hidden">
             <button class="filter" data-podcast="alle">Alle</button>
+
         </ul>
+
     </nav>
     <section class="container"></section>
 </main>
@@ -56,14 +58,15 @@ get_header();
         const catdata = await fetch(catUrl);
         podcasts = await data.json();
         categories = await catdata.json();
-        console.log(categories);
+        /* console.log(categories); */
         visPodcasts();
         opretKnapper();
+        sidenVises();
     }
 
     function opretKnapper() {
         categories.forEach(cat => {
-            document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
+            document.querySelector("#filtrering ul").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
         })
         addEventListenersToButtons();
     }
@@ -100,11 +103,11 @@ get_header();
     }
     getJson();
 
-    window.addEventListener("load", sidenVises);
+    /* document.addEventListener("DOMContentLoaded", sidenVises); */
 
     function sidenVises() {
         console.log("sidenVises");
-        document.querySelector("#filterknap").addEventListener("click", toggleMenu);
+        document.querySelector("#filtrering #filterknap").addEventListener("click", toggleMenu);
     }
 
     function toggleMenu() {
