@@ -18,75 +18,81 @@ get_header();
 ?>
 
 <template>
-        <article class="podcasts">
-            <img class="billede" src="" alt="">
-            <div>
+    <article class="podcasts">
+        <img class="billede" src="" alt="">
+        <div>
             <h2></h2>
             <p class="beskrivelse_kort"></p>
             <p class="beskrivelse_lang"></p>
-            </div>
-        </article>
-    </template>
+        </div>
+    </article>
+</template>
 
- <main id="main" class="site-main">
-   <nav id="filtrering"><button class="filter" data-podcast="alle">Alle</button></nav>
+<main id="main" class="site-main">
+    <nav id="filtrering">
+        <button class="filter" data-podcast="alle">Alle</button>
+    </nav>
     <section class="container"></section>
 </main>
- <script>
+<script>
+    let podcasts;
+    let categories;
+    let filterPodcast = "alle";
 
-        let podcasts;
-     let categories;
-     let filterPodcast = "alle";
+    const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
-        const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
+    const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
 
-        const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
+    async function getJson() {
+        const data = await fetch(dbUrl);
+        const catdata = await fetch(catUrl);
+        podcasts = await data.json();
+        categories = await catdata.json();
+        console.log(categories);
+        visPodcasts();
+        opretKnapper();
+    }
 
-        async function getJson() {
-            const data = await fetch(dbUrl);
-            const catdata = await fetch(catUrl);
-            podcasts = await data.json();
-            categories = await catdata.json();
-            console.log(categories);
-            visPodcasts();
-            opretKnapper();
-        }
+    function opretKnapper() {
+        categories.forEach(cat => {
+            document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
+        })
+        addEventListenersToButtons();
+    }
 
-     function opretKnapper(){
-         categories.forEach(cat => {
-             document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
-         })
-         addEventListenersToButtons();
-     }
-     function addEventListenersToButtons() {
-         document.querySelectorAll("#filtrering button").forEach(elm =>{
-             elm.addEventListener("click", filtrering);
-         })
-     };
-     function filtrering() {
-         filterPodcast = this.dataset.podcast;
-         console.log(filterPodcast);
-         visPodcasts();
-     }
+    function addEventListenersToButtons() {
+        document.querySelectorAll("#filtrering button").forEach(elm => {
+            elm.addEventListener("click", filtrering);
+        })
+    };
 
-        function visPodcasts() {
-            let temp = document.querySelector("template");
-            let container = document.querySelector(".container")
-            container.innerHTML = "";
-            podcasts.forEach(podcast => {
-                if (filterPodcast == "alle" || podcast.categories.includes(parseInt(filterPodcast))){
+    function filtrering() {
+        filterPodcast = this.dataset.podcast;
+        console.log(filterPodcast);
+        visPodcasts();
+    }
+
+    function visPodcasts() {
+        let temp = document.querySelector("template");
+        let container = document.querySelector(".container")
+        container.innerHTML = "";
+        podcasts.forEach(podcast => {
+            if (filterPodcast == "alle" || podcast.categories.includes(parseInt(filterPodcast))) {
                 let klon = temp.cloneNode(true).content;
                 klon.querySelector("h2").innerHTML = podcast.title.rendered;
                 klon.querySelector(".billede").src = podcast.billede.guid;
                 klon.querySelector(".beskrivelse_kort").textContent = podcast.beskrivelse_kort;
 
-                klon.querySelector("article").addEventListener("click", ()=> {location.href = podcast.link;})
+                klon.querySelector("article").addEventListener("click", () => {
+                    location.href = podcast.link;
+                })
                 container.appendChild(klon);
-                }
-            })
-        }
-        getJson();
-    </script>
+            }
+        })
+    }
+    getJson();
+
+</script>
 
 <?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
