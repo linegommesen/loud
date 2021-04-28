@@ -118,10 +118,25 @@ h3 {
         background-color: #cc0033;
     }
 
-    #menu-item-725 {
+    #menu-item-771 a {
         color: #ffffff;
     }
-
+#menu-item-58   a{
+     padding: 5px !important;
+        color: black;
+    }
+    #menu-item-79 a{
+         padding: 5px  !important;
+        color: black;
+    }
+    #menu-item-57 a{
+         padding: 5px !important;
+         color: black;
+    }
+    #menu-item-59 a{
+         padding: 5px !important;
+        color: black;
+    }
     @media (min-width: 700px) {
         .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
             max-width: 100%;

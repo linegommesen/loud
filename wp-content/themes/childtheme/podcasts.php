@@ -24,27 +24,31 @@
     </section>
     <script>
 
-        let podcasts;
+        let episoder;
+        let podcast
 
-        const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
+        const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/episoder?per_page=100";
+        const podUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
         async function getJson() {
             const data = await fetch(dbUrl);
-            podcasts = await data.json();
-            console.log(podcasts);
-            visPodcasts();
+            const podData = await fetch(podUrl);
+            episoder = await data.json();
+            podcast = await podData.json();
+            console.log(episoder);
+            visEpisoder();
         }
 
-        function visPodcasts() {
+        function visEpisoder() {
             let temp = document.querySelector("template");
             let container = document.querySelector(".container")
 
-            podcasts.forEach(podcast => {
-                 if (podcast.nyeste >= true){
+            episoder.forEach(episoder => {
+                if (episoder.nyeste == 1){
                 let klon = temp.cloneNode(true).content;
-                klon.querySelector("h2").textContent = podcast.title.rendered;
-                klon.querySelector(".billede").src = podcast.billede.guid;
-                klon.querySelector(".beskrivelse_kort").textContent = podcast.beskrivelse_kort;
+                klon.querySelector("h2").textContent = episoder.title.rendered;
+                klon.querySelector(".billede").src = episoder.billede.guid;
+                klon.querySelector(".beskrivelse_kort").textContent = episoder.beskrivelse_kort;
 
                 klon.querySelector("article").addEventListener("click", ()=> {location.href = podcast.link;})
                 container.appendChild(klon);
