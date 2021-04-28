@@ -25,12 +25,16 @@
     <script>
 
         let episoder;
+        let podcast
 
         const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/episoder?per_page=100";
+        const podUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
         async function getJson() {
             const data = await fetch(dbUrl);
+            const podData = await fetch(podUrl);
             episoder = await data.json();
+            podcast = await podData.json();
             console.log(episoder);
             visEpisoder();
         }
@@ -46,7 +50,7 @@
                 klon.querySelector(".billede").src = episoder.billede.guid;
                 klon.querySelector(".beskrivelse_kort").textContent = episoder.beskrivelse_kort;
 
-//                klon.querySelector("article").addEventListener("click", ()=> {location.href = podcast.link;})
+                klon.querySelector("article").addEventListener("click", ()=> {location.href = podcast.link;})
                 container.appendChild(klon);
                  }
             })
