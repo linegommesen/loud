@@ -166,6 +166,30 @@ ul {
 
 /* FOOTER GLOBAL SLUT */
 
+/* FOOTER MOBILE */
+#site-footer .section-inner {
+    display: inline;
+    text-align: center;
+}
+
+#site-footer .section-inner img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.copyright p {
+    text-align: center;
+}
+
+.flexdisplay {
+    display: flex;
+}
+
+.youtubeikon img {
+    width: 10%;
+}
+
 /* MEDIA TIL DESKTOP */
 
 @media (min-width: 1000px) {
@@ -272,7 +296,60 @@ ul {
 
     /* FOOTER DESKTOP */
     .copyright p {
-        padding-left: 20px;
+        padding-left: 225px;
+    }
+
+    #site-footer .section-inner {
+        align-items: baseline;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    #site-footer .section-inner img {
+        display: block;
+    }
+
+    .bottomfooter {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 1fr 1.8fr 1fr 1fr 1fr;
+    }
+
+    .socialmedia {
+        grid-column-start: 6;
+        display: inline;
+    }
+
+    .flexdisplay {
+        width: 100%;
+    }
+
+    .facebookikon img {
+        /*  width: 85%;*/
+        margin-top: 4px;
+        margin-right: 30px;
+    }
+
+    .instagramikon img {
+        width: 55%;
+        height: 100%;
+        margin-right: 75px;
+    }
+
+    .instagramikon {
+        margin-right: -30px;
+        margin-left: 5px;
+    }
+
+    .youtubeikon img {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .youtubeikon {
+        margin-right: 30px;
     }
 
     /* FOOTER DESKTOP SLUT */
