@@ -5,17 +5,19 @@ Description: Twenty twenty childtheme
 Version: 1.0.4
 Author: Line G
 */
+
+/* SENDEPLAN */
 #master-schedule-tabs .master-schedule-tabs-day-name {
-
-
     font-family: 'Work Sans', sans-serif;
-
 }
 
 #master-schedule-tab-panels .master-schedule-tabs-show .show-info {
     font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+/* SLUT SENDEPLAN */
+
+/* STYLE AF TYPOGRAFI */
 
 p {
     font-family: 'Work Sans', sans-serif;
@@ -69,48 +71,110 @@ h3 {
     text-align: center;
 }
 
+/* SLUT STYLE TYPOGRAFI */
+
+/* STYLE AF NAVBAR */
+#menu-item-771 a {
+    color: #ffffff;
+}
+
+#menu-item-58 a {
+    padding: 5px !important;
+    color: black;
+}
+
+#menu-item-79 a {
+    padding: 5px !important;
+    color: black;
+}
+
+#menu-item-57 a {
+    padding: 5px !important;
+    color: black;
+}
+
+#menu-item-59 a {
+    padding: 5px !important;
+    color: black;
+}
+
+
+/* STYLE AF NAVBAR SLUT */
+
+/* FILTRERINGSKNAPPER GLOBAL */
 .filter {
     border-radius: 7px;
     background-color: #9AC1B5;
     color: white;
 }
 
-.podcasts:hover {
-    transform: scale(1.1);
+/* FILTRERINGSKNAPPER GLOBAL SLUT */
+
+/* BURGERMENU MOBILE */
+.filterdisplay {
+    display: none;
 }
 
-@media (min-width: 700px) {
+#filterknap {
+    display: inline-block;
+}
+
+#menu {
+    list-style-type: none;
+
+}
+
+.show {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    margin-right: 1.7rem;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.filter {
+    font-size: 1.3rem;
+}
+
+ul {
+    margin-top: 2rem;
+}
+
+#filterknap {
+    position: absolute;
+    left: 33rem;
+    top: 35rem;
+    display: inline-block;
+}
+
+#filterknap img {
+    width: 3rem;
+    margin-right: 2rem;
+}
+
+/* BURGERMENU SLUT */
+
+/* FOOTER GLOBAL */
+#site-footer {
+    background-color: #FDA87B;
+}
+
+.radioloud a {
+    color: black;
+}
+
+/* FOOTER GLOBAL SLUT */
+
+/* MEDIA TIL DESKTOP */
+
+@media (min-width: 1000px) {
     .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
         max-width: 100%;
         width: calc(100% - 4rem);
     }
 
-    .container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 5rem;
-        padding-left: 12rem;
-        padding-right: 12rem;
-
-    }
-
-    .episode_enkelt {
-        background-color: #F7F7F7;
-    }
-
-    .ikon {
-        max-width: 4rem;
-        max-height: 4rem;
-    }
-
-    .ikoner {
-        display: flex;
-        flex-direction: row;
-        column-gap: 0.7rem;
-        justify-content: center;
-        margin-top: 7.2rem;
-    }
-
+    /* LOUD LIVE KNAP */
     .ss-nav-button {
         padding: 5px 18px !important;
         color: #ffffff !important;
@@ -118,35 +182,16 @@ h3 {
         background-color: #cc0033;
     }
 
-    #menu-item-771 a {
-        color: #ffffff;
+    #menu-item-725 a {
+        color: white;
     }
 
-    #menu-item-58 a {
-        padding: 5px !important;
-        color: black;
-    }
-
-    #menu-item-79 a {
-        padding: 5px !important;
-        color: black;
-    }
-
-    #menu-item-57 a {
-        padding: 5px !important;
-        color: black;
-    }
-
-    #menu-item-59 a {
-        padding: 5px !important;
-        color: black;
-    }
+    /* LOUD LIVE KNAP SLUT */
 
 
-
-    .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
-        max-width: 100%;
-        width: calc(100% - 4rem);
+    /* STYLING AF PODCAST OG EPISODER LOOP */
+    .podcasts:hover {
+        transform: scale(1.1);
     }
 
     .container {
@@ -181,50 +226,36 @@ h3 {
         padding-right: 12rem;
     }
 
+    .ikon {
+        max-width: 4rem;
+        max-height: 4rem;
+    }
+
+    .ikoner {
+        display: flex;
+        flex-direction: row;
+        column-gap: 0.7rem;
+        justify-content: center;
+        margin-top: 7.2rem;
+    }
+
+    /* SLUT MED STYLE AF PODCAST OG EPISODER LOOP */
+
+    /* FILTRERINGSKNAPPER DESKTOP */
     #filtrering {
         margin-left: 10rem;
         margin-right: 12rem;
     }
 
-    #menu .filterdisplay {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: 1rem;
-        margin-right: 1.7rem;
-    }
-}
+    /* FILTRERINGSKNAPPER DESKTOP SLUT */
 
-#menu-item-725 a {
-    color: white;
-}
-
-/* body:not(.overlay-header) .primary-menu > li > a {
-        color: white;
-    } */
-
-/* BURGERMENU */
-.filterdisplay {
-    display: none;
-}
-
-.show {}
-
-/*nav {
-    display: none;
-}*/
-
-#filterknap {
-    display: inline-block;
-}
-
-#menu {
-    list-style-type: none;
-
-}
-
-@media only screen and (min-width: 600px) {
+    /* BURGERMENU DESKTOP */
     #filterknap {
         display: none;
+    }
+
+    #menu li {
+        display: inline-block;
     }
 
     #menu.filterdisplay {
@@ -236,57 +267,12 @@ h3 {
         grid-column-end: 4;
     }
 
-    #menu li {
-        display: inline-block;
-    }
-}
+    /* BURGERMENU DESKTOP SLUT */
 
-@media only screen and (max-width: 800px) {
-
-    .show {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
-        margin-right: 1.7rem;
-        grid-column-start: 1;
-        grid-column-end: 4;
+    /* FOOTER DESKTOP */
+    .copyright p {
+        padding-left: 20px;
     }
 
-    .filter {
-        font-size: 1.3rem;
-    }
-
-    /*.show button {
-        margin-top: 2rem;
-    }*/
-
-    ul {
-        margin-top: 2rem;
-    }
-
-    #filterknap {
-        position: absolute;
-        left: 33rem;
-        top: 35rem;
-        display: inline-block;
-    }
-
-    #filterknap img {
-        width: 3rem;
-        margin-right: 2rem;
-    }
-}
-
-/* FOOTER */
-
-#site-footer {
-    background-color: #FDA87B;
-}
-
-.radioloud a {
-    color: black;
-}
-
-.copyright p {
-    padding-left: 20px;
+    /* FOOTER DESKTOP SLUT */
 }
