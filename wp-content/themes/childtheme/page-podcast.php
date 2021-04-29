@@ -35,8 +35,8 @@ get_header();
     </section>
 
     <nav id="filtrering">
-        <div id="filterknap">☰</div>
-        <ul id="menu" class="hidden">
+        <div id="filterknap"><img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/filter.png" alt="Filter"></div>
+        <ul id="menu" class="filterdisplay">
             <button class="filter" data-podcast="alle">Alle</button>
 
         </ul>
@@ -112,14 +112,15 @@ get_header();
 
     function toggleMenu() {
         console.log("toggleMenu");
-        document.querySelector("#menu").classList.toggle("hidden");
+        document.querySelector("#menu").classList.toggle("filterdisplay");
+        document.querySelector("#menu").classList.toggle("show");
 
-        let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+        let erSkjult = document.querySelector("#menu").classList.contains("filterdisplay");
 
         if (erSkjult == true) {
-            document.querySelector("#filterknap").textContent = "☰";
+            document.querySelector("#filterknap").innerHTML = `<img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/filter.png" alt="Filter">`;
         } else {
-            document.querySelector("#filterknap").textContent = "X";
+            document.querySelector("#filterknap").innerHTML = `<img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/X.png" alt="Kryds">`;
         }
     }
 

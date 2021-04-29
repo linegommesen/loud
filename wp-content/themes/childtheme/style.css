@@ -121,105 +121,172 @@ h3 {
     #menu-item-771 a {
         color: #ffffff;
     }
-#menu-item-58   a{
-     padding: 5px !important;
+
+    #menu-item-58 a {
+        padding: 5px !important;
         color: black;
     }
-    #menu-item-79 a{
-         padding: 5px  !important;
+
+    #menu-item-79 a {
+        padding: 5px !important;
         color: black;
     }
-    #menu-item-57 a{
-         padding: 5px !important;
-         color: black;
-    }
-    #menu-item-59 a{
-         padding: 5px !important;
+
+    #menu-item-57 a {
+        padding: 5px !important;
         color: black;
     }
-    @media (min-width: 700px) {
-        .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
-            max-width: 100%;
-            width: calc(100% - 4rem);
-        }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 3rem;
-            padding-left: 12rem;
-            padding-right: 12rem;
-            padding-top: 4rem;
-
-        }
-
-        .episode_enkelt {
-            display: grid;
-            grid-template-columns: 0.7fr 2fr 1fr;
-            grid-template-rows: 1;
-            column-gap: 1rem;
-            background-color: #F7F7F7;
-
-        }
-
-        .episode_billede {
-            max-height: 18rem;
-        }
-
-        #episoder {
-            display: grid;
-            grid-template-columns: 1;
-            grid-template-rows: auto;
-            grid-gap: 1rem;
-            padding-left: 12rem;
-            padding-right: 12rem;
-        }
-
-        #filtrering {
-            margin-left: 12rem;
-            margin-right: 12rem;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 3;
-            grid-gap: 10px;
-        }
+    #menu-item-59 a {
+        padding: 5px !important;
+        color: black;
     }
 
-    #menu-item-725 a {
-        color: white;
+
+
+    .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+        max-width: 100%;
+        width: calc(100% - 4rem);
     }
 
-    /* body:not(.overlay-header) .primary-menu > li > a {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 3rem;
+        padding-left: 12rem;
+        padding-right: 12rem;
+        padding-top: 4rem;
+
+    }
+
+    .episode_enkelt {
+        display: grid;
+        grid-template-columns: 0.7fr 2fr 1fr;
+        grid-template-rows: 1;
+        column-gap: 1rem;
+        background-color: #F7F7F7;
+
+    }
+
+    .episode_billede {
+        max-height: 18rem;
+    }
+
+    #episoder {
+        display: grid;
+        grid-template-columns: 1;
+        grid-template-rows: auto;
+        grid-gap: 1rem;
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+
+    #filtrering {
+        margin-left: 10rem;
+        margin-right: 12rem;
+    }
+
+    #menu .filterdisplay {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 1rem;
+        margin-right: 1.7rem;
+    }
+}
+
+#menu-item-725 a {
+    color: white;
+}
+
+/* body:not(.overlay-header) .primary-menu > li > a {
         color: white;
     } */
 
-    /* BURGERMENU */
-    .hidden {
-        transform: translateX(-100%);
+/* BURGERMENU */
+.filterdisplay {
+    display: none;
+}
+
+.show {}
+
+/*nav {
+    display: none;
+}*/
+
+#filterknap {
+    display: inline-block;
+}
+
+#menu {
+    list-style-type: none;
+
+}
+
+@media only screen and (min-width: 600px) {
+    #filterknap {
         display: none;
     }
 
+    #menu.filterdisplay {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 1rem;
+        margin-right: 1.7rem;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    #menu li {
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .show {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        margin-right: 1.7rem;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .filter {
+        font-size: 1.3rem;
+    }
+
+    /*.show button {
+        margin-top: 2rem;
+    }*/
+
+    ul {
+        margin-top: 2rem;
+    }
+
     #filterknap {
+        position: absolute;
+        left: 33rem;
+        top: 35rem;
         display: inline-block;
     }
 
-    #menu {
-        list-style-type: none;
-        transition: transform .3s;
-        transform-origin: top left;
+    #filterknap img {
+        width: 3rem;
+        margin-right: 2rem;
     }
+}
 
-    @media only screen and (min-width: 600px) {
-        #filterknap {
-            display: none;
-        }
+/* FOOTER */
 
-        #menu.hidden {
-            transform: translateX(0);
-            opacity: 1;
-        }
+#site-footer {
+    background-color: #FDA87B;
+}
 
-        #menu li {
-            display: inline-block;
-        }
-    }
+.radioloud a {
+    color: black;
+}
+
+.copyright p {
+    padding-left: 20px;
+}

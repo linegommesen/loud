@@ -415,7 +415,7 @@ foreach ( $weekdays as $i => $weekday ) {
 
 					// 2.3.0: filter show time by show and context
 					$show_time = '<span class="rs-time rs-start-time" data="' . esc_attr( $shift_start_time ) . '" data-format="' . esc_attr( $start_data_format ) . '">' . esc_html( $start ) . '</span>' . $newline;
-					$show_time .= '<span class="rs-sep"> ' . esc_html( __( 'to', 'radio-station' ) ) . ' </span>' . $newline;
+					$show_time .= '<span class="rs-sep"> ' . esc_html( __( 'til', 'radio-station' ) ) . ' </span>' . $newline;
 					$show_time .= '<span class="rs-time rs-end-time" data="' . esc_attr( $shift_end_time ) . '" data-format="' . esc_attr( $end_data_format ) . '">' . esc_html( $end ) . '</span>' . $newline;
 
 				} else {
