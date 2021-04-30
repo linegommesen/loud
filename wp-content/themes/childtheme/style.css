@@ -190,6 +190,25 @@ ul {
     width: 10%;
 }
 
+/* MEDIA TIL MOBILE */
+
+@media (max-width: 800px) {
+    /*.container {
+        display: none;
+    }*/
+
+    .overskrift,
+    .tekst {
+        display: none;
+    }
+
+    div#n2-ss-2,
+    div#n2-ss-2-placeholder {
+        display: none;
+    }
+
+}
+
 /* MEDIA TIL DESKTOP */
 
 @media (min-width: 1000px) {
@@ -217,6 +236,7 @@ ul {
     .podcasts:hover {
         transform: scale(1.1);
         background-color: #F7F7F7;
+        cursor: pointer;
     }
 
     .container {
@@ -353,4 +373,8 @@ ul {
     }
 
     /* FOOTER DESKTOP SLUT */
+    .overskrift {
+        margin-top: -450px;
+    }
+
 }

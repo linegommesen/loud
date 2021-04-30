@@ -9,12 +9,20 @@
  * @since Twenty Twenty 1.0
  */
 
+
 get_header();
 ?>
 
+<style>
+    .container {
+        display: none;
+    }
+
+</style>
+
 <main id="site-content" role="main">
 
-	<?php
+    <?php
 
 	if ( have_posts() ) {
 
