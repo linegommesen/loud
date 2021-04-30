@@ -14,8 +14,10 @@ get_header();
 ?>
 
 <style>
-    .container {
-        display: none;
+    @media (max-width: 800px) {
+        .container {
+            display: none;
+        }
     }
 
 </style>
