@@ -37,6 +37,7 @@
     }
 
     function visEpisoder() {
+        console.log(visEpisoder);
         let temp = document.querySelector("template");
         let container = document.querySelector(".container")
 
