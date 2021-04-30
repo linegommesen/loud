@@ -2,7 +2,7 @@
 Theme Name: Childtheme
 Template: twentytwenty
 Description: Twenty twenty childtheme
-Version: 1.0.5
+Version: 1.0.6
 Author: Line G
 */
 
@@ -95,6 +95,14 @@ h3 {
 
 #menu-item-59 a {
     padding: 5px !important;
+    color: black;
+}
+
+/*wp-burgermenu styling*/
+.modal-menu > li > a, .modal-menu > li > .ancestor-wrapper > a {
+           font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
     color: black;
 }
 
