@@ -54,18 +54,23 @@ get_header();
 <script>
     let podcasts;
     let categories;
+    let genre;
     let filterPodcast = "alle";
 
     const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
     const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
 
+    const genreUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/genres?per_page=100";
+
     async function getJson() {
         const data = await fetch(dbUrl);
         const catdata = await fetch(catUrl);
+        const genredata = await fetch(genreUrl);
         podcasts = await data.json();
         categories = await catdata.json();
-        /* console.log(categories); */
+        genre = await genredata.json();
+        console.log(categories);
         visPodcasts();
         opretKnapper();
         opretKnapper2();
@@ -79,8 +84,8 @@ get_header();
         addEventListenersToButtons();
     }
       function opretKnapper2() {
-        categories.forEach(cat => {
-            document.querySelector("#filtrering2 ul").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
+        genre.forEach(gen => {
+            document.querySelector("#filtrering2 ul").innerHTML += `<button class="filter" data-podcast="${gen.id}">${gen.name}</button>`
         })
         addEventListenersToButtons2();
     }
@@ -146,14 +151,14 @@ get_header();
         function toggleMenu2() {
         console.log("toggleMenu2");
         document.querySelector("#menu2").classList.toggle("filterdisplay");
-        document.querySelector("#menu2").classList.toggle("show");
+        document.querySelector("#menu2").classList.toggle("show2");
 
         let erSkjult2 = document.querySelector("#menu2").classList.contains("filterdisplay");
 
         if (erSkjult2 == true) {
-            document.querySelector("#filterknap2").innerHTML = `<button>A-Z</button>`;
+            document.querySelector("#filterknap2").innerHTML = `<button class="filter2">A-Z</button>`;
         } else {
-            document.querySelector("#filterknap2").innerHTML = `<button>A-Z</button>>`;
+            document.querySelector("#filterknap2").innerHTML = `<button class="filter2">A-Z</button>>`;
         }
     }
 

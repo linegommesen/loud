@@ -140,6 +140,19 @@ h3 {
     grid-column-start: 1;
     grid-column-end: 4;
 }
+.show2{
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-gap: 1rem;
+    margin-right: 22rem;
+    margin-left: 20rem;
+}
+.filter2{
+    margin-left: 58rem;
+    border-radius: 7px;
+    background-color: #9AC1B5;
+    color: white;
+}
 
 .filter {
     font-size: 1.3rem;
@@ -343,6 +356,7 @@ ul {
     }
 
     /* BURGERMENU DESKTOP SLUT */
+
 
     /* FOOTER DESKTOP */
     .copyright p {
