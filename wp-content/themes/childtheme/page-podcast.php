@@ -42,6 +42,13 @@ get_header();
         </ul>
 
     </nav>
+    <nav id="filtrering2">
+       <div id="filterknap2"><button class="filter2">A-Z</button></div>
+        <ul id="menu2" class="filterdisplay">
+
+
+        </ul>
+    </nav>
     <section class="container"></section>
 </main>
 <script>
@@ -61,6 +68,7 @@ get_header();
         /* console.log(categories); */
         visPodcasts();
         opretKnapper();
+        opretKnapper2();
         sidenVises();
     }
 
@@ -70,9 +78,20 @@ get_header();
         })
         addEventListenersToButtons();
     }
+      function opretKnapper2() {
+        categories.forEach(cat => {
+            document.querySelector("#filtrering2 ul").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
+        })
+        addEventListenersToButtons2();
+    }
 
     function addEventListenersToButtons() {
         document.querySelectorAll("#filtrering button").forEach(elm => {
+            elm.addEventListener("click", filtrering);
+        })
+    };
+     function addEventListenersToButtons2() {
+        document.querySelectorAll("#filtrering2 button").forEach(elm => {
             elm.addEventListener("click", filtrering);
         })
     };
@@ -108,6 +127,7 @@ get_header();
     function sidenVises() {
         console.log("sidenVises");
         document.querySelector("#filtrering #filterknap").addEventListener("click", toggleMenu);
+        document.querySelector("#filtrering2 #filterknap2").addEventListener("click", toggleMenu2);
     }
 
     function toggleMenu() {
@@ -121,6 +141,19 @@ get_header();
             document.querySelector("#filterknap").innerHTML = `<img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/filter.png" alt="Filter">`;
         } else {
             document.querySelector("#filterknap").innerHTML = `<img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/X.png" alt="Kryds">`;
+        }
+    }
+        function toggleMenu2() {
+        console.log("toggleMenu2");
+        document.querySelector("#menu2").classList.toggle("filterdisplay");
+        document.querySelector("#menu2").classList.toggle("show");
+
+        let erSkjult2 = document.querySelector("#menu2").classList.contains("filterdisplay");
+
+        if (erSkjult2 == true) {
+            document.querySelector("#filterknap2").innerHTML = `<button>A-Z</button>`;
+        } else {
+            document.querySelector("#filterknap2").innerHTML = `<button>A-Z</button>>`;
         }
     }
 
