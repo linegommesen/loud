@@ -99,8 +99,9 @@ h3 {
 }
 
 /*wp-burgermenu styling*/
-.modal-menu > li > a, .modal-menu > li > .ancestor-wrapper > a {
-           font-family: 'Work Sans', sans-serif;
+.modal-menu > li > a,
+.modal-menu > li > .ancestor-wrapper > a {
+    font-family: 'Work Sans', sans-serif;
     font-size: 20px;
     font-weight: 300;
     color: black;
@@ -140,14 +141,16 @@ h3 {
     grid-column-start: 1;
     grid-column-end: 4;
 }
-.show2{
+
+.show2 {
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     grid-gap: 1rem;
     margin-right: 22rem;
     margin-left: 20rem;
 }
-.filter2{
+
+.filter2 {
     margin-left: 58rem;
     border-radius: 7px;
     background-color: #9AC1B5;
@@ -211,7 +214,7 @@ ul {
     width: 10%;
 }
 
- /* STYLING AF PODCAST OG EPISODER LOOP */
+/* STYLING AF PODCAST OG EPISODER LOOP */
 /*
 .podcasts{
     max-width: 80%;
@@ -221,7 +224,7 @@ ul {
 }
 */
 
- /* STYLING AF PODCAST OG EPISODER LOOP SLUT */
+/* STYLING AF PODCAST OG EPISODER LOOP SLUT */
 
 
 /* MEDIA TIL MOBILE */
@@ -240,16 +243,34 @@ ul {
     div#n2-ss-2-placeholder {
         display: none;
     }
-    .container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.podcasts{
-    margin: 1rem;
-    background-color: #F7F7F7;
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .podcasts {
+        margin: 1rem;
+        background-color: #F7F7F7;
+
+    }
 
 }
 
+/* LOUD LIVE KNAP */
+.music-container {
+    display: flex;
+    padding: 0px 10px;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 20px;
+}
+
+
+.knappen {
+    display: none;
 }
 
 /* MEDIA TIL DESKTOP */
