@@ -372,6 +372,14 @@
     z-index: 999;
 }
 
+/*@media (max-width: 800px) {
+    #master-schedule-tab-panels {
+        display: grid;
+        grid-gap: 10px;
+    }
+
+}*/
+
 #master-schedule-tab-panels {
     min-width: 300px;
 }
@@ -395,7 +403,7 @@
 
 #master-schedule-tab-panels .master-schedule-tabs-panel .master-schedule-tabs-show {
     padding: 10px 10px;
-    margin: 0 10px;
+    margin: 10px 10px;
     clear: both;
     list-style: none;
     background-color: #F7F7F7;
@@ -427,7 +435,13 @@
     background-color: #ffffff;
     /* border-top: 0; */
     border-radius: 0 7px 7px 7px;
-    padding: 0px 100px 100px 100px;
+    /* padding: 0px 100px 100px 100px;*/
+}
+
+@media (min-width: 1000px) {
+    #master-schedule-tab-panels .master-schedule-tabs-panel.active-day-panel {
+        padding: 0px 100px 100px 100px;
+    }
 }
 
 #master-schedule-tab-panels .master-schedule-tabs-show.before-current {
