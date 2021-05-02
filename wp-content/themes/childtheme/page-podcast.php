@@ -52,8 +52,10 @@ get_header();
     <section class="container"></section>
 </main>
 <script>
+
     let podcasts;
     let categories;
+
     let genre;
     let filterPodcast = "alle";
     let filterPodcast2 = "a-z";
@@ -134,6 +136,7 @@ get_header();
             }
         })
     }
+
       function visPodcasts2() {
         let temp = document.querySelector("template");
         let container = document.querySelector(".container")
