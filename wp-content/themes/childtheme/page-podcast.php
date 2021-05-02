@@ -56,6 +56,7 @@ get_header();
     let categories;
     let genre;
     let filterPodcast = "alle";
+    let filterPodcast2 = "a-z";
 
     const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
@@ -72,6 +73,7 @@ get_header();
         genre = await genredata.json();
         console.log(categories);
         visPodcasts();
+        visPodcasts2();
         opretKnapper();
         opretKnapper2();
         sidenVises();
@@ -88,6 +90,7 @@ get_header();
             document.querySelector("#filtrering2 ul").innerHTML += `<button class="filter" data-podcast="${gen.id}">${gen.name}</button>`
         })
         addEventListenersToButtons2();
+        genre.sort();
     }
 
     function addEventListenersToButtons() {
@@ -97,7 +100,7 @@ get_header();
     };
      function addEventListenersToButtons2() {
         document.querySelectorAll("#filtrering2 button").forEach(elm => {
-            elm.addEventListener("click", filtrering);
+            elm.addEventListener("click", filtrering2);
         })
     };
 
@@ -107,12 +110,36 @@ get_header();
         visPodcasts();
     }
 
+    function filtrering2() {
+        filterPodcast2 = this.dataset.podcast;
+        console.log(filterPodcast2);
+        visPodcasts2();
+    }
+
     function visPodcasts() {
         let temp = document.querySelector("template");
         let container = document.querySelector(".container")
         container.innerHTML = "";
         podcasts.forEach(podcast => {
             if (filterPodcast == "alle" || podcast.categories.includes(parseInt(filterPodcast))) {
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h2").innerHTML = podcast.title.rendered;
+                klon.querySelector(".billede").src = podcast.billede.guid;
+                klon.querySelector(".beskrivelse_kort").textContent = podcast.beskrivelse_kort;
+
+                klon.querySelector("article").addEventListener("click", () => {
+                    location.href = podcast.link;
+                })
+                container.appendChild(klon);
+            }
+        })
+    }
+      function visPodcasts2() {
+        let temp = document.querySelector("template");
+        let container = document.querySelector(".container")
+        container.innerHTML = "";
+        podcasts.forEach(podcast => {
+            if (filterPodcast2 == "a-z" || podcast.genre.includes(parseInt(filterPodcast2))) {
                 let klon = temp.cloneNode(true).content;
                 klon.querySelector("h2").innerHTML = podcast.title.rendered;
                 klon.querySelector(".billede").src = podcast.billede.guid;
