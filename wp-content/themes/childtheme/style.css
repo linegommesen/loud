@@ -151,14 +151,15 @@ h3 {
     margin-left: 20rem;
 }
 
-.filter2 {
-    margin-left: 58rem;
+
+
+.filter {
+    font-size: 1.3rem;
+}
+.filter2{
     border-radius: 7px;
     background-color: #9AC1B5;
     color: white;
-}
-
-.filter {
     font-size: 1.3rem;
 }
 
@@ -168,13 +169,13 @@ ul {
 
 #filterknap {
     position: absolute;
-    left: 33rem;
+    left: 17rem;
     top: 35rem;
     display: inline-block;
 }
 
 #filterknap img {
-    width: 3rem;
+    width: 4rem;
     margin-right: 2rem;
 }
 
@@ -230,7 +231,7 @@ ul {
 
 /* MEDIA TIL MOBILE */
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     /*.container {
         display: none;
     }*/
@@ -255,6 +256,11 @@ ul {
         background-color: #F7F7F7;
 
     }
+    .filter2 {
+    padding: 10px;
+    margin-left: 16.5rem;
+    margin-top: 1rem;
+}
 
 }
 
@@ -356,6 +362,11 @@ ul {
         margin-left: 18rem;
         margin-right: 20rem;
     }
+    .filter2{
+         margin-left: 58rem;
+        padding: 13px;
+    }
+
 
     /* FILTRERINGSKNAPPER DESKTOP SLUT */
 
