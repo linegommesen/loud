@@ -43,36 +43,36 @@ get_header();
 
     </nav>
     <nav id="filtrering2">
-       <div id="filterknap2"><button class="filter2">A-Z</button></div>
+        <div id="filterknap2"><button class="filter2" data-podcast2="a-z">A-Z</button></div>
         <ul id="menu2" class="filterdisplay">
+            <ul id="menu2" class="show2">
 
+
+                <button class="filter" data-podcast2="A">A</button><button class="filter" data-podcast2="B">B</button><button class="filter" data-podcast2="C">C</button><button class="filter" data-podcast2="D">D</button><button class="filter" data-podcast2="E">E</button><button class="filter" data-podcast2="F">F</button><button class="filter" data-podcast2="G">G</button><button class="filter" data-podcast2="H">H</button><button class="filter" data-podcast2="I">I</button><button class="filter" data-podcast2="J">J</button><button class="filter" data-podcast2="K">K</button><button class="filter" data-podcast2="L">L</button><button class="filter" data-podcast2="M">M</button><button class="filter" data-podcast2="N">N</button><button class="filter" data-podcast2="O">O</button><button class="filter" data-podcast2="P">P</button><button class="filter" data-podcast2="Q">Q</button><button class="filter" data-podcast2="R">R</button><button class="filter" data-podcast2="S">S</button><button class="filter" data-podcast2="T">T</button><button class="filter" data-podcast2="U">U</button><button class="filter" data-podcast2="V">V</button><button class="filter" data-podcast2="W">W</button><button class="filter" data-podcast2="X">X</button><button class="filter" data-podcast2="Y">Y</button><button class="filter" data-podcast2="Z">Z</button><button class="filter" data-podcast2="Å">Å</button><button class="filter" data-podcast2="Æ">Æ</button><button class="filter" data-podcast2="Ø">Ø</button>
+            </ul>
 
         </ul>
     </nav>
     <section class="container"></section>
 </main>
 <script>
-
     let podcasts;
-    let categories;
 
-    let genre;
+
+    let categories;
     let filterPodcast = "alle";
     let filterPodcast2 = "a-z";
 
-    const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
+    //    const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
     const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
 
-    const genreUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/genres?per_page=100";
-
     async function getJson() {
-        const data = await fetch(dbUrl);
+        //        const data = await fetch(dbUrl);
         const catdata = await fetch(catUrl);
-        const genredata = await fetch(genreUrl);
-        podcasts = await data.json();
+
+        //        podcasts = await data.json();
         categories = await catdata.json();
-        genre = await genredata.json();
         console.log(categories);
         visPodcasts();
         visPodcasts2();
@@ -87,20 +87,37 @@ get_header();
         })
         addEventListenersToButtons();
     }
-      function opretKnapper2() {
-        genre.forEach(gen => {
-            document.querySelector("#filtrering2 ul").innerHTML += `<button class="filter" data-podcast="${gen.id}">${gen.name}</button>`
-        })
+
+    function opretKnapper2() {
+        //     genre.sort(compare);
+        // console.log("genre: ", genre);
+        // genre.forEach(gen => {
+        // document.querySelector("#filtrering2 ul").innerHTML += `<button class="filter" data-podcast2="${gen.name}">${gen.name}</button>`
+        // })
         addEventListenersToButtons2();
-        genre.sort();
+
+
     }
+
+    function compare(a, b) {
+        if (a.name < b.name) {
+            return -1;
+        }
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    }
+
+
 
     function addEventListenersToButtons() {
         document.querySelectorAll("#filtrering button").forEach(elm => {
             elm.addEventListener("click", filtrering);
         })
     };
-     function addEventListenersToButtons2() {
+
+    function addEventListenersToButtons2() {
         document.querySelectorAll("#filtrering2 button").forEach(elm => {
             elm.addEventListener("click", filtrering2);
         })
@@ -113,7 +130,7 @@ get_header();
     }
 
     function filtrering2() {
-        filterPodcast2 = this.dataset.podcast;
+        filterPodcast2 = this.dataset.podcast2;
         console.log(filterPodcast2);
         visPodcasts2();
     }
@@ -137,12 +154,14 @@ get_header();
         })
     }
 
-      function visPodcasts2() {
+    function visPodcasts2() {
         let temp = document.querySelector("template");
         let container = document.querySelector(".container")
         container.innerHTML = "";
+        console.log("podcasts: ", podcasts);
+        console.log("filterpodcast2: ", filterPodcast2);
         podcasts.forEach(podcast => {
-            if (filterPodcast2 == "a-z" || podcast.genre.includes(parseInt(filterPodcast2))) {
+            if (filterPodcast2 == "a-z" || podcast.title.rendered.charAt(0) == filterPodcast2) {
                 let klon = temp.cloneNode(true).content;
                 klon.querySelector("h2").innerHTML = podcast.title.rendered;
                 klon.querySelector(".billede").src = podcast.billede.guid;
@@ -178,23 +197,19 @@ get_header();
             document.querySelector("#filterknap").innerHTML = `<img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/X.png" alt="Kryds">`;
         }
     }
-        function toggleMenu2() {
+
+    function toggleMenu2() {
         console.log("toggleMenu2");
         document.querySelector("#menu2").classList.toggle("filterdisplay");
         document.querySelector("#menu2").classList.toggle("show2");
 
         let erSkjult2 = document.querySelector("#menu2").classList.contains("filterdisplay");
 
-        if (erSkjult2 == true) {
-            document.querySelector("#filterknap2").innerHTML = `<button class="filter2">A-Z</button>`;
-        } else {
-            document.querySelector("#filterknap2").innerHTML = `<button class="filter2">A-Z</button>>`;
-        }
     }
 
 </script>
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+<?php //get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php
 get_footer();

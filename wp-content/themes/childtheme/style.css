@@ -2,7 +2,7 @@
 Theme Name: Childtheme
 Template: twentytwenty
 Description: Twenty twenty childtheme
-Version: 1.0.6
+Version: 1.0.7
 Author: Line G
 */
 
@@ -147,8 +147,8 @@ h3 {
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     grid-gap: 1rem;
-    margin-right: 22rem;
-    margin-left: 20rem;
+    /*    margin-right: 22rem;*/
+    margin-left: 11rem;
 }
 
 
@@ -156,7 +156,8 @@ h3 {
 .filter {
     font-size: 1.3rem;
 }
-.filter2{
+
+.filter2 {
     border-radius: 7px;
     background-color: #9AC1B5;
     color: white;
@@ -256,11 +257,12 @@ ul {
         background-color: #F7F7F7;
 
     }
+
     .filter2 {
-    padding: 10px;
-    margin-left: 16.5rem;
-    margin-top: 1rem;
-}
+        padding: 10px;
+        margin-left: 16.5rem;
+        margin-top: 1rem;
+    }
 
 }
 
@@ -362,8 +364,9 @@ ul {
         margin-left: 18rem;
         margin-right: 20rem;
     }
-    .filter2{
-         margin-left: 58rem;
+
+    .filter2 {
+        margin-left: 58rem;
         padding: 13px;
     }
 
