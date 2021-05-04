@@ -31,7 +31,7 @@ get_header();
 
 <main id="main" class="site-main">
     <section class="container2">
-        <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcasts_banner.png" alt="">
+        <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcast_banner_ny.png" alt="">
     </section>
 
     <nav id="filtrering">
@@ -63,15 +63,15 @@ get_header();
     let filterPodcast = "alle";
     let filterPodcast2 = "a-z";
 
-    //    const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
+    const dbUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/podcast?per_page=100";
 
     const catUrl = "http://linegommesen.com/kea/radio_loud/wp-json/wp/v2/categories?per_page=100";
 
     async function getJson() {
-        //        const data = await fetch(dbUrl);
+        const data = await fetch(dbUrl);
         const catdata = await fetch(catUrl);
 
-        //        podcasts = await data.json();
+        podcasts = await data.json();
         categories = await catdata.json();
         console.log(categories);
         visPodcasts();
