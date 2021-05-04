@@ -234,7 +234,11 @@ ul {
 
 /*PODCAST BANNER*/
 .container2 {
-    background-image: url(img/)
+    background-image: url(http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcast_banner_mobil.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 18rem;
+    margin-bottom: 4rem;
 }
 
 /*PODCAST BANNER SLUT*/
