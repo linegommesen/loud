@@ -31,7 +31,7 @@ get_header();
 
 <main id="main" class="site-main">
     <section class="container2">
-        <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcast_banner_ny.png" alt="">
+<!--        <img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcast_banner_ny.png" alt="">-->
     </section>
 
     <nav id="filtrering">

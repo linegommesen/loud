@@ -144,11 +144,13 @@ h3 {
 }
 
 .show2 {
+    margin-left: 4rem;
     display: grid;
-    grid-template-columns: repeat(14, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
-    /*    margin-right: 22rem;*/
-    margin-left: 11rem;
+    margin-right: 1.7rem;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 
@@ -230,6 +232,12 @@ ul {
 
 /* STYLING AF PODCAST OG EPISODER LOOP SLUT */
 
+/*PODCAST BANNER*/
+.container2 {
+    background-image: url(img/)
+}
+
+/*PODCAST BANNER SLUT*/
 
 /* MEDIA TIL MOBILE */
 
@@ -258,11 +266,12 @@ ul {
         background-color: #F7F7F7;
 
     }
-.filter2 {
-    padding: 10px;
-    margin-left: 16.5rem;
-    margin-top: 1rem;
-}
+
+    .filter2 {
+        padding: 10px;
+        margin-left: 16.5rem;
+        margin-top: 1rem;
+    }
 
 }
 
@@ -314,7 +323,7 @@ ul {
 
     .container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         grid-gap: 3rem;
         padding-left: 12rem;
         padding-right: 12rem;
@@ -359,6 +368,17 @@ ul {
 
     /* SLUT MED STYLE AF PODCAST OG EPISODER LOOP */
 
+    /*    PODCAST BANNER*/
+    .container2 {
+        background-image: url(http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/podcast_banner_ny.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 38rem;
+        margin-bottom: 5rem;
+    }
+
+    /*    PODCAST BANNER SLUT*/
+
     /* FILTRERINGSKNAPPER DESKTOP */
     #filtrering {
         margin-left: 18rem;
@@ -368,6 +388,14 @@ ul {
     .filter2 {
         margin-left: 48%;
         padding: 13px;
+    }
+
+    .show2 {
+        display: grid;
+        grid-template-columns: repeat(14, 1fr);
+        grid-gap: 1rem;
+        /*    margin-right: 22rem;*/
+        margin-left: 11rem;
     }
 
 
