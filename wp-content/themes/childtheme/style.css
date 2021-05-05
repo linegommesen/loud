@@ -2,7 +2,7 @@
 Theme Name: Childtheme
 Template: twentytwenty
 Description: Twenty twenty childtheme
-Version: 1.0.7
+Version: 1.0.8
 Author: Line G
 */
 
@@ -223,23 +223,29 @@ ul {
     text-align: center;
 }
 
+/*
 #site-footer .section-inner img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+*/
 
 .copyright p {
     text-align: center;
 }
 
+/*
 .flexdisplay {
     display: flex;
 }
+*/
 
+/*
 .youtubeikon img {
-    width: 10%;
+    width: 32px;
 }
+*/
 
 /* STYLING AF PODCAST OG EPISODER LOOP */
 /*
@@ -471,39 +477,58 @@ ul {
         grid-template-columns: 3fr 1fr 1fr 1fr 1.8fr 1fr 1fr 1fr;
     }
 
+    /*
     .socialmedia {
         grid-column-start: 6;
         display: inline;
     }
+*/
 
+    /*
     .flexdisplay {
         width: 100%;
     }
+*/
 
-    .facebookikon img {
-        /*  width: 85%;*/
-        margin-top: 4px;
-        margin-right: 30px;
+
+    .flexdisplay {
+        display: flex;
+        /*        width: 10rem;*/
+        flex-direction: row;
+        column-gap: 10px;
     }
 
+
+    .facebookikon {
+        width: 32px;
+
+    }
+
+
+    /*
     .instagramikon img {
         width: 55%;
         height: 100%;
         margin-right: 75px;
     }
+*/
+
 
     .instagramikon {
-        margin-right: -30px;
-        margin-left: 5px;
+        width: 32px;
     }
 
-    .youtubeikon img {
-        margin-top: 10px;
-        width: 100%;
-    }
+
+    /*
+
 
     .youtubeikon {
         margin-right: 30px;
+    }
+*/
+    .youtubeikon {
+        width: 32px;
+        margin-top: 4px;
     }
 
     /* FOOTER DESKTOP SLUT */
