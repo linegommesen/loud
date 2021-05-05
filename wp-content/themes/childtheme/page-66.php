@@ -14,8 +14,13 @@ get_header();
 ?>
 
 <style>
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         .container {
+            display: none;
+        }
+
+        .overskrift,
+        .tekst {
             display: none;
         }
     }
