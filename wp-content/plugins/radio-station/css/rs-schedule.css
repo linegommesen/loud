@@ -311,7 +311,8 @@
     list-style: none;
     margin-left: 20px;
     border-bottom: 0;
-    box-shadow: -4px -3px 7px 0px rgb(0 0 0 / 7%);
+    /*box-shadow: -4px -3px 7px 0px rgb(0 0 0 / 7%);*/
+    border-radius: 7px;
 }
 
 #master-schedule-tabs .master-schedule-tabs-day.start-tab,
@@ -333,7 +334,7 @@
 	padding: 5px 10px 5px 10px; */
     display: block;
     font-size: 1em;
-    color: #cc0033;
+    color: black;
 }
 
 #master-schedule-tabs .master-schedule-tabs-day-name:hover {
@@ -351,9 +352,9 @@
 
 #master-schedule-tabs .master-schedule-tabs-day.active-day-tab {
     font-weight: bold;
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
     /* border-bottom: 0; */
-    border: 2px solid #cc0033;
+    border: 2px solid black;
 }
 
 

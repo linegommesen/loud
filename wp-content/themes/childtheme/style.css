@@ -28,6 +28,14 @@ Author: Line G
     text-transform: uppercase;
 }
 
+#master-schedule-tabs .master-schedule-tabs-day {
+    background-color: #99cccc;
+}
+
+.shift-right-arrow {
+    color: black;
+}
+
 /* SLUT SENDEPLAN */
 
 /* STYLE AF TYPOGRAFI */
