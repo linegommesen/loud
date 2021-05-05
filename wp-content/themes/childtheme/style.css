@@ -9,10 +9,23 @@ Author: Line G
 /* SENDEPLAN */
 #master-schedule-tabs .master-schedule-tabs-day-name {
     font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
 }
 
 #master-schedule-tab-panels .master-schedule-tabs-show .show-info {
     font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.show-title a {
+    color: black;
+}
+
+.show-desc a {
+    color: black;
+}
+
+.master-schedule-tabs-day-name {
+    text-transform: uppercase;
 }
 
 /* SLUT SENDEPLAN */

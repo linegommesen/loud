@@ -505,7 +505,7 @@
 
 #master-schedule-tab-panels .master-schedule-tabs-show .show-desc {
     font-size: 0.75em;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 
 #master-schedule-tab-panels .master-schedule-tabs-show.highlighted {
