@@ -233,12 +233,7 @@ ul {
     text-align: center;
 }
 
-.flexdisplay {
-    margin-left: 13rem;
-    display: flex;
-    flex-direction: row;
-    column-gap: 10px;
-}
+
 
 .facebookikon {
     width: 32px;
@@ -334,6 +329,13 @@ ul {
 
 .knappen {
     display: none;
+}
+
+.flexdisplay {
+    margin-left: 13rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
 }
 
 /* MEDIA TIL DESKTOP */
@@ -483,7 +485,10 @@ ul {
 
     #site-footer .section-inner img {
         display: block;
+        margin-left: 0;
+        margin-right: auto;
     }
+
 
     .bottomfooter {
         display: grid;
@@ -505,6 +510,7 @@ ul {
 
 
     .flexdisplay {
+        margin-left: 0rem;
         display: flex;
         /*        width: 10rem;*/
         flex-direction: row;
