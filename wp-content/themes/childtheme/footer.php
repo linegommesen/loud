@@ -22,6 +22,7 @@
                 <a href="https://apps.apple.com/dk/app/radio-loud/id1498746367"><img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/apple%20download.png" alt="Apple store download"></a>
                 <a href="https://play.google.com/store/apps/details?id=dk.uptime.RadioLoud&hl=da&gl=US"><img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/googleplay.png" alt="Google play download"></a>
             </p>
+            <h2>SOCIALE MEDIER</h2>
             <div class="socialmedia">
                 <div class="flexdisplay">
                     <div class="facebookikon">
