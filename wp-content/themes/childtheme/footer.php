@@ -62,29 +62,7 @@
         </div>
 
     </div><!-- .section-inner -->
-    <div class="bottomfooter">
-        <!--
-        <div class="copyright">
-            <p>©Copyright 2021</p>
-        </div>
--->
-        <!--
-        <div class="socialmedia">
-            <div class="flexdisplay">
-                <div class="facebookikon">
-                    <a href="https://www.facebook.com/radiolouddanmark"><img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/fb_logo.png" alt="Facebook">
-                    </a>
-                </div>
-                <div class="instagramikon">
-                    <a href="https://www.instagram.com/radio.louddk/"><img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/ig_logo.png" alt="Instagram"></a>
-                </div>
-                <div class="youtubeikon">
-                    <a href="https://www.youtube.com/channel/UCjuazr_wWF6hWUVUd30cMkw"><img src="http://linegommesen.com/kea/radio_loud/wp-content/themes/childtheme/img/yt_logo.png" alt="Youtube"></a>
-                </div>
-            </div>
-        </div>
--->
-    </div>
+
 </footer><!-- #site-footer -->
 
 <?php wp_footer(); ?>

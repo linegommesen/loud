@@ -77,7 +77,7 @@ h2 {
 h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 4rem;
+    font-size: 6rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-right: 0rem;
@@ -223,23 +223,36 @@ ul {
     text-align: center;
 }
 
-/*
 #site-footer .section-inner img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-*/
 
 .copyright p {
     text-align: center;
 }
 
-/*
 .flexdisplay {
+    margin-left: 13rem;
     display: flex;
+    flex-direction: row;
+    column-gap: 10px;
 }
-*/
+
+.facebookikon {
+    width: 32px;
+
+}
+
+.instagramikon {
+    width: 32px;
+}
+
+.youtubeikon {
+    width: 32px;
+    margin-top: 4px;
+}
 
 /*
 .youtubeikon img {
